@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const userRoutes = require("./routes/userRoutes");
+const contactRoutes = require("./routes/contactsRoute");
 const { connectToDatabase } = require("./config/db");
 
 const app = express();
@@ -16,6 +17,7 @@ connectToDatabase();
 
 // Routes
 app.use("/users", userRoutes);
+app.use("/contacts", contactRoutes);
 
 app.get("/", (req, res) => {
   res.send("JobHuntBd Is Running");
