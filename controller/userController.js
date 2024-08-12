@@ -12,6 +12,7 @@ const postUser = async (req, res) => {
   const userCollections = db.collection("users");
   const userData = req.body;
   const addUser = await userCollections.insertOne(userData);
+  console.log(addUser)
   res.send(addUser);
 };
 
